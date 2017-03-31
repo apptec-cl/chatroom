@@ -1,0 +1,5 @@
+<ul class="list-group">
+	<% User.all.where.not(id: current_user.id).each do |user| %>
+		<li class="list-group-item" style=" border: 1px solid #e3e3e3; border-radius: 0 !important;"><%= user.email %> <div id="user_<%= user.id %>" class="pull-right" style=" width: 40px; height: 40px; margin-top: -10px; margin-right: -15px; background-color: <%= user.conected ? "green" : "red" %>;"></div></li>
+	<%end%>
+</ul>
